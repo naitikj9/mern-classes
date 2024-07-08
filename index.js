@@ -1,28 +1,23 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
 const app = express();
-require('dotenv').config()
-
-
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    console.log("Db Connected");
-  })
-  .catch((err) => {
-    console.log("Db connection Failed", err);
-  });
+
+mongoose.connect(process.env.MONGO_URL). then (() => 
+    console.log('Connected to MongoDB')).
+catch(err => console.error('Failed due to ', err)
+);
 
 
+const productRoutes = require('./routes/productRoutes');
+app.use('/products', productRoutes);
+
+const userRoutes = require('./routes/userRoutes');
+app.use('/users', userRoutes);
 
 
-
-// Create
-
-
-
-app.listen(3600, () => {
-  console.log("Server sTarted at port 3600");
+app.listen(3001, () => {
+    console.log('Server listening on port 3001');
 });
