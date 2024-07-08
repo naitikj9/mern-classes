@@ -1,0 +1,1 @@
+git@github.com:mrinal1224/STT-Mern.gitmongodb+srv://naitikjain921:ITPOEMqhetPJMA2V@cluster0.ejutznh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
